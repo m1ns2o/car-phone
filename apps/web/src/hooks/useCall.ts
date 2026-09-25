@@ -40,6 +40,7 @@ export function useCall({ roomId, name, remoteAudio, inviteTo, inviteFrom }: Use
 
   const wsRef = useRef<WebSocket | null>(null);
   const inviteTimerRef = useRef<ReturnType<typeof setInterval> | undefined>(undefined);
+  const joinTimerRef = useRef<ReturnType<typeof setInterval> | undefined>(undefined);
   const heartbeatRef = useRef<ReturnType<typeof setInterval> | undefined>(undefined);
   const pcRef = useRef<RTCPeerConnection | null>(null);
   const localRef = useRef<MediaStream | null>(null);
@@ -152,6 +153,17 @@ export function useCall({ roomId, name, remoteAudio, inviteTo, inviteFrom }: Use
 
         let peerSeen = false;
         let inviteTimer: ReturnType<typeof setInterval> | undefined;
+        // ROOM_JOIN 유실 대비: 상대 입장 확인 전까지 4초 간격 재전송 (서버 Set이라 멱등)
+        const joinTimer = setInterval(() => {
+          if (!peerSeen && ws.readyState === WebSocket.OPEN) {
+            try {
+              ws.send(JSON.stringify({ t: 'ROOM_JOIN', roomId, name } satisfies SignalMessage));
+            } catch {
+              /* ignore */
+            }
+          }
+        }, 4000);
+        joinTimerRef.current = joinTimer;
         ws.onopen = () => {
           ws.send(JSON.stringify({ t: 'ROOM_JOIN', roomId, name } satisfies SignalMessage));
           setStatus('waiting-peer');
@@ -183,6 +195,7 @@ export function useCall({ roomId, name, remoteAudio, inviteTo, inviteFrom }: Use
         const stopInviteRetry = () => {
           peerSeen = true;
           if (inviteTimer) clearInterval(inviteTimer);
+          clearInterval(joinTimer);
         };
         ws.onclose = () => log('ws closed');
         ws.onerror = () => {
@@ -241,6 +254,7 @@ export function useCall({ roomId, name, remoteAudio, inviteTo, inviteFrom }: Use
     return () => {
       cancelled = true;
       if (inviteTimerRef.current) clearInterval(inviteTimerRef.current);
+      if (joinTimerRef.current) clearInterval(joinTimerRef.current);
       if (heartbeatRef.current) clearInterval(heartbeatRef.current);
       wsRef.current?.close();
       pcRef.current?.close();
