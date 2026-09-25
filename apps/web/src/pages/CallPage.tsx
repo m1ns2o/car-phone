@@ -1,6 +1,6 @@
-import { useMemo, useRef } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
-import { Mic, MicOff, PhoneOff, Phone, RefreshCw, ChevronDown, Signal } from 'lucide-react';
+import { Mic, MicOff, PhoneOff, Phone, RefreshCw, ChevronDown, Signal, Copy, Check, Link2 } from 'lucide-react';
 import { useCall } from '../hooks/useCall';
 import { callsApi } from '@carphone/api';
 import { useAuth } from '../stores/auth';
@@ -66,6 +66,8 @@ export function CallPage() {
         </span>
 
         <audio ref={audioRef} autoPlay playsInline controls className="mt-4 w-full" />
+
+        <ShareInvite roomId={roomId} />
 
         {c.error && (
           <div className="mt-3 w-full rounded-2xl border border-rose-500/40 bg-rose-500/10 p-3 text-[13px] text-rose-500">
@@ -153,5 +155,28 @@ export function CallPage() {
         </p>
       </div>
     </Shell>
+  );
+}
+
+// 통화방에서도 초대링크 공유 (한 줄 컴팩트)
+function ShareInvite({ roomId }: { roomId: string }) {
+  const [copied, setCopied] = useState(false);
+  const invite = `${location.origin}/call/${roomId}`;
+  return (
+    <div className="mt-3 flex w-full items-center gap-2 rounded-2xl border border-white/8 bg-night-800 px-3 py-2.5">
+      <Link2 size={15} className="shrink-0 text-mint-400" />
+      <span className="flex-1 truncate font-mono text-[12px] text-mist-300">{invite.replace(/^https?:\/\//, '')}</span>
+      <button
+        onClick={async () => {
+          await navigator.clipboard?.writeText(invite);
+          setCopied(true);
+          setTimeout(() => setCopied(false), 1500);
+        }}
+        aria-label="초대링크 복사"
+        className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white/8 text-white"
+      >
+        {copied ? <Check size={16} className="text-mint-400" /> : <Copy size={16} />}
+      </button>
+    </div>
   );
 }

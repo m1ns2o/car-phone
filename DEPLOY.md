@@ -63,9 +63,12 @@ cp /opt/carphone/data/carphone.db ~/backup-$(date +%F).db
 
 ## 3. 웹 배포 (Cloudflare Pages)
 
-1. Git 저장소 연결, Framework `Vite`
-   - Build: `pnpm install && pnpm --filter @carphone/web build` / Output: `apps/web/dist`
-2. 환경변수: `VITE_API_URL=https://api.<도메인>`, `VITE_WS_URL=wss://api.<도메인>/ws`, `VITE_GOOGLE_CLIENT_ID=<동일 ID>`
+운영: `https://carphone.pages.dev` (직접 업로드, GitHub 연동 불필요).
+재배포: `pnpm --filter @carphone/web build` 후
+`wrangler pages deploy apps/web/dist --project-name=carphone --branch=main`.
+빌드 시 환경변수: `VITE_API_URL=https://carphone-api.m1ns2o.com`,
+`VITE_WS_URL=wss://carphone-api.m1ns2o.com/ws`, `VITE_GOOGLE_CLIENT_ID=<동일 ID>`.
+(커스텀 `car-phone.m1ns2o.com`은 CNAME → `carphone.pages.dev` 추가 시 활성화 — 선택)
 
 ## 4. 검증 체크리스트
 

@@ -69,8 +69,9 @@ export function GoogleButton() {
       window.google.accounts.id.renderButton(divRef.current, {
         theme: 'filled_black',
         size: 'large',
-        width: 320,
-        text: 'continue_with',
+        width: 300,
+        shape: 'rectangular',
+        text: 'signin_with',
       });
     });
     return () => {
