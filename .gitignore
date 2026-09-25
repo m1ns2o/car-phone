@@ -1,0 +1,27 @@
+node_modules/
+dist/
+dist-ssr/
+*.local
+# 환경변수·시크릿 (예시 파일만 커밋)
+.env
+.env.*
+!.env.example
+# SQLite 로컬 DB
+*.db
+*.db-shm
+*.db-wal
+data/
+# macOS / 키
+.DS_Store
+*.pem
+*.key
+*.crt
+client_secret*.json
+# 빌드·테스트 부산물
+*.tsbuildinfo
+coverage/
+.pnpm-store/
+# 로그·임시
+*.log
+npm-debug.log*
+/tmp/

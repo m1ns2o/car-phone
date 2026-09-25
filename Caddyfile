@@ -1,0 +1,5 @@
+# Caddy가 {$DOMAIN}에 대해 Let's Encrypt 자동 발급 + server로 리버스프록시.
+# Cloudflare DNS는 A레코드 DNS-only(회색 구름) 권장 — TURN UDP와 WS 장시간 연결에 유리.
+{$DOMAIN} {
+	reverse_proxy server:3000
+}
