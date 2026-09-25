@@ -1,0 +1,63 @@
+name: deploy-server
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'apps/server/**'
+      - 'packages/**'
+      - 'pnpm-lock.yaml'
+      - '.github/workflows/deploy.yml'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.33.2
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install + verify
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm --filter @carphone/server typecheck
+          pnpm --filter @carphone/server build
+
+      - name: Pack (secrets 제외)
+        run: |
+          tar --exclude=node_modules --exclude=.git --exclude='apps/server/data' --exclude='apps/server/dist' --exclude='apps/web/dist' --exclude=.env --exclude='client_secret*.json' -czf /tmp/carphone-app.tgz .
+
+      - name: Upload
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          source: /tmp/carphone-app.tgz
+          target: /tmp/
+
+      - name: Deploy + restart
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            set -e
+            sudo rm -rf /opt/carphone/apps /opt/carphone/packages /opt/carphone/pnpm-workspace.yaml /opt/carphone/pnpm-lock.yaml /opt/carphone/package.json /opt/carphone/tsconfig.base.json
+            sudo tar -xzf /tmp/carphone-app.tgz -C /opt/carphone
+            sudo chown -R carphone:carphone /opt/carphone
+            cd /opt/carphone
+            sudo -u carphone pnpm install --frozen-lockfile
+            sudo -u carphone pnpm --filter @carphone/server build
+            sudo chown -R carphone:carphone /opt/carphone
+            sudo systemctl restart carphone
+            sleep 4
+            curl -sf http://127.0.0.1:3000/api/health
