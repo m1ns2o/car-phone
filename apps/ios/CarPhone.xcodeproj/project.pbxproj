@@ -1,0 +1,166 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+		E5737E9EF0811060AFCBBAAE = {isa = PBXBuildFile; fileRef = 27E576A2CEDB2095C0CCEBA7; };
+		2BC5CBE584929FAF656907D5 = {isa = PBXBuildFile; fileRef = FE5DA8A8B1E3ADC28CF9AE5F; };
+		D9A7D197421CDC2F3568C667 = {isa = PBXBuildFile; fileRef = 691A87125046248400AD3170; };
+		BE41F7D9A4EA6100C0E84C12 = {isa = PBXBuildFile; fileRef = 26F150EBB624B2FF3A1E6B55; };
+		ED3EB68F538CB6D3EB1187BE = {isa = PBXBuildFile; fileRef = B0017A5A03919C9AEE8D2044; };
+		E01A64D757E491BA8D312148 = {isa = PBXBuildFile; fileRef = 440C2E58BF11C7A39F6257FB; };
+		B674DB772853DF051DE39D95 = {isa = PBXBuildFile; fileRef = F7A8F2BB9DD0C476639386CA; };
+		6A772ED7367C6767C7AE9235 = {isa = PBXBuildFile; fileRef = B143EFC29539E005093688EE; };
+		FAB572B5D08AA1EF9EAC2D09 = {isa = PBXBuildFile; fileRef = A85E9D03425BC1B03B642E72; };
+		1BBDB8B0D5499B95BDB5149E = {isa = PBXBuildFile; fileRef = 72EF0E2ECB90DB1E8F66A54A; };
+		644E03DBD5D1C446F66E353A = {isa = PBXBuildFile; fileRef = 28511D70D95963E5D6855FF9; };
+		8166E3FB616A1F627D15D015 = {isa = PBXBuildFile; fileRef = AFD3B8ED994A79DFCAD6479B; };
+		B8ADFDBA8AD3A5834D126669 = {isa = PBXBuildFile; fileRef = 52D8FD9D2D255AF43B755108; };
+		3E6B58702A273AA41AB4594D = {isa = PBXBuildFile; fileRef = E75A2A3300B3A2760963E272; };
+		895CDCB6D6289BB4EE8C10D8 = {isa = PBXBuildFile; fileRef = 57409C9A558046C57A533B72; };
+		8B4DC3F4470964BD6CCFAEE2 = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		27E576A2CEDB2095C0CCEBA7 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPhoneApp.swift; sourceTree = "<group>"; };
+		FE5DA8A8B1E3ADC28CF9AE5F = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		691A87125046248400AD3170 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		26F150EBB624B2FF3A1E6B55 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		B0017A5A03919C9AEE8D2044 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		440C2E58BF11C7A39F6257FB = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signaling.swift; sourceTree = "<group>"; };
+		F7A8F2BB9DD0C476639386CA = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallAudio.swift; sourceTree = "<group>"; };
+		B143EFC29539E005093688EE = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Peer.swift; sourceTree = "<group>"; };
+		A85E9D03425BC1B03B642E72 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallViewModel.swift; sourceTree = "<group>"; };
+		72EF0E2ECB90DB1E8F66A54A = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		28511D70D95963E5D6855FF9 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallView.swift; sourceTree = "<group>"; };
+		AFD3B8ED994A79DFCAD6479B = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
+		52D8FD9D2D255AF43B755108 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		E75A2A3300B3A2760963E272 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		57409C9A558046C57A533B72 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		BD69E47D82E914B1416E824A = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAF6AA633395B1B76148E35B = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = ( ); runOnlyForDeploymentPostprocessing = 0; };
+		0F78FE532035D122ED352DBA = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
+			E5737E9EF0811060AFCBBAAE,
+			2BC5CBE584929FAF656907D5,
+			D9A7D197421CDC2F3568C667,
+			BE41F7D9A4EA6100C0E84C12,
+			ED3EB68F538CB6D3EB1187BE,
+			E01A64D757E491BA8D312148,
+			B674DB772853DF051DE39D95,
+			6A772ED7367C6767C7AE9235,
+			FAB572B5D08AA1EF9EAC2D09,
+			1BBDB8B0D5499B95BDB5149E,
+			644E03DBD5D1C446F66E353A,
+			8166E3FB616A1F627D15D015,
+			B8ADFDBA8AD3A5834D126669,
+			3E6B58702A273AA41AB4594D,
+			895CDCB6D6289BB4EE8C10D8,
+		); runOnlyForDeploymentPostprocessing = 0; };
+		B19911C44BD755AB4F173858 = {isa = PBXGroup; children = (8B4DC3F4470964BD6CCFAEE2, 107135D82C0898ACC5295C33, 3936A56E033FE156B0D38F79); sourceTree = "<group>"; };
+		107135D82C0898ACC5295C33 = {isa = PBXGroup; children = (
+			27E576A2CEDB2095C0CCEBA7,
+			FE5DA8A8B1E3ADC28CF9AE5F,
+			691A87125046248400AD3170,
+			26F150EBB624B2FF3A1E6B55,
+			B0017A5A03919C9AEE8D2044,
+			440C2E58BF11C7A39F6257FB,
+			F7A8F2BB9DD0C476639386CA,
+			B143EFC29539E005093688EE,
+			A85E9D03425BC1B03B642E72,
+			72EF0E2ECB90DB1E8F66A54A,
+			28511D70D95963E5D6855FF9,
+			AFD3B8ED994A79DFCAD6479B,
+			52D8FD9D2D255AF43B755108,
+			E75A2A3300B3A2760963E272,
+			57409C9A558046C57A533B72,
+			BD69E47D82E914B1416E824A,
+		); path = CarPhone; sourceTree = "<group>"; };
+		3936A56E033FE156B0D38F79 = {isa = PBXGroup; children = (2CDAFB926984AE9A72E42C12); name = Products; sourceTree = "<group>"; };
+		2CDAFB926984AE9A72E42C12 = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42AEFBAE01D2DFD981F7DA7D = {isa = PBXNativeTarget; buildConfigurationList = 0E11E779C11FE7EC37C19F16; buildPhases = (0F78FE532035D122ED352DBA, DAF6AA633395B1B76148E35B); buildRules = ( ); dependencies = ( ); name = CarPhone; packageProductDependencies = ( ); productName = CarPhone; productReference = 2CDAFB926984AE9A72E42C12; productType = "com.apple.product-type.application"; };
+		4DC844ABCCFC0D132D087C1C = {isa = PBXProject; buildConfigurationList = A2501B56D7B8BB2DD22282D8; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en, ko); mainGroup = B19911C44BD755AB4F173858; productRefGroup = 3936A56E033FE156B0D38F79; projectDirPath = ""; projectRoot = ""; targets = (42AEFBAE01D2DFD981F7DA7D); };
+		207C6501C4ABC7F82FCCB9F1 = {isa = XCBuildConfiguration; buildSettings = {
+			ALWAYS_SEARCH_USER_PATHS = NO;
+			CLANG_ENABLE_MODULES = YES;
+			CURRENT_PROJECT_VERSION = 1;
+			DYLIB_COMPATIBILITY_VERSION = 1;
+			DYLIB_CURRENT_VERSION = 1;
+			DYLIB_INSTALL_NAME_BASE = "@rpath";
+			INFOPLIST_FILE = "CarPhone/Info.plist";
+			INSTALL_PATH = "$(LOCAL_APPS_DIR)";
+			LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+			MARKETING_VERSION = 0.3.0;
+			PRODUCT_BUNDLE_IDENTIFIER = com.carphone.app;
+			PRODUCT_NAME = "$(TARGET_NAME)";
+			SWIFT_EMIT_LOC_STRINGS = YES;
+			SWIFT_VERSION = 5.0;
+			TARGETED_DEVICE_FAMILY = "1,2";
+			CODE_SIGN_IDENTITY = -;
+			CODE_SIGN_STYLE = Manual;
+			COPY_PHASE_STRIP = NO;
+			DEBUG_INFORMATION_FORMAT = dwarf;
+			ENABLE_TESTABILITY = YES;
+			GCC_DYNAMIC_NO_PIC = NO;
+			GCC_OPTIMIZATION_LEVEL = 0;
+			GCC_PREPROCESSOR_DEFINITIONS = ("DEBUG=1", "$(inherited)");
+			IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+			MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+			ONLY_ACTIVE_ARCH = YES;
+			SDKROOT = iphoneos;
+			SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+			SWIFT_OPTIMIZATION_LEVEL = -Onone;
+		}; name = Debug; };
+		405B7F98CE1EDF236F1C33ED = {isa = XCBuildConfiguration; buildSettings = {
+			ALWAYS_SEARCH_USER_PATHS = NO;
+			CLANG_ENABLE_MODULES = YES;
+			CURRENT_PROJECT_VERSION = 1;
+			DYLIB_COMPATIBILITY_VERSION = 1;
+			DYLIB_CURRENT_VERSION = 1;
+			DYLIB_INSTALL_NAME_BASE = "@rpath";
+			INFOPLIST_FILE = "CarPhone/Info.plist";
+			INSTALL_PATH = "$(LOCAL_APPS_DIR)";
+			LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+			MARKETING_VERSION = 0.3.0;
+			PRODUCT_BUNDLE_IDENTIFIER = com.carphone.app;
+			PRODUCT_NAME = "$(TARGET_NAME)";
+			SWIFT_EMIT_LOC_STRINGS = YES;
+			SWIFT_VERSION = 5.0;
+			TARGETED_DEVICE_FAMILY = "1,2";
+			CODE_SIGN_IDENTITY = -;
+			CODE_SIGN_STYLE = Manual;
+			COPY_PHASE_STRIP = NO;
+			DEBUG_INFORMATION_FORMAT = dwarf-with-dsym;
+			ENABLE_NS_ASSERTIONS = NO;
+			GCC_OPTIMIZATION_LEVEL = s;
+			IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+			MTL_ENABLE_DEBUG_INFO = NO;
+			SDKROOT = iphoneos;
+			SWIFT_COMPILATION_MODE = wholemodule;
+			SWIFT_OPTIMIZATION_LEVEL = -O;
+			VALIDATE_PRODUCT = YES;
+		}; name = Release; };
+		9B0CF97F9A547A93F8752A02 = {isa = XCBuildConfiguration; buildSettings = {
+			ALWAYS_SEARCH_USER_PATHS = NO;
+			CLANG_ENABLE_MODULES = YES;
+			COPY_PHASE_STRIP = NO;
+			DEBUG_INFORMATION_FORMAT = dwarf;
+			ENABLE_TESTABILITY = YES;
+			GCC_DYNAMIC_NO_PIC = NO;
+			GCC_OPTIMIZATION_LEVEL = 0;
+			GCC_PREPROCESSOR_DEFINITIONS = ("DEBUG=1", "$(inherited)");
+			MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+			ONLY_ACTIVE_ARCH = YES;
+		}; name = Debug; };
+		FD6F75785413E79ED2B23BA2 = {isa = XCBuildConfiguration; buildSettings = {
+			ALWAYS_SEARCH_USER_PATHS = NO;
+			CLANG_ENABLE_MODULES = YES;
+			COPY_PHASE_STRIP = NO;
+			DEBUG_INFORMATION_FORMAT = dwarf-with-dsym;
+			ENABLE_NS_ASSERTIONS = NO;
+			GCC_OPTIMIZATION_LEVEL = s;
+			MTL_ENABLE_DEBUG_INFO = NO;
+		}; name = Release; };
+		0E11E779C11FE7EC37C19F16 = {isa = XCConfigurationList; buildConfigurations = (207C6501C4ABC7F82FCCB9F1, 405B7F98CE1EDF236F1C33ED); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		A2501B56D7B8BB2DD22282D8 = {isa = XCConfigurationList; buildConfigurations = (9B0CF97F9A547A93F8752A02, FD6F75785413E79ED2B23BA2); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+	};
+	rootObject = 4DC844ABCCFC0D132D087C1C;
+}
