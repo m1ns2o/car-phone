@@ -49,9 +49,9 @@ enum SignalMessage: Codable {
     var d: [String: Any] = [:]
     switch self {
     case let .roomJoin(r, n, t): d = ["t": "ROOM_JOIN", "roomId": r, "name": n]; if let t { d["token"] = t }
-    case let .offer(r, s): d = ["t": "OFFER", "roomId": r, "sdp": s]
-    case let .answer(r, s): d = ["t": "ANSWER", "roomId": r, "sdp": s]
-    case let .candidate(r, c): d = ["t": "CANDIDATE", "roomId": r, "candidate": c]
+    case let .offer(r, s): d = ["t": "SDP_OFFER", "roomId": r, "sdp": s]
+    case let .answer(r, s): d = ["t": "SDP_ANSWER", "roomId": r, "sdp": s]
+    case let .candidate(r, c): d = ["t": "ICE_CANDIDATE", "roomId": r, "candidate": c]
     case let .callInvite(r, to, f, fu): d = ["t": "CALL_INVITE", "roomId": r, "toUserId": to, "from": f]; if let fu { d["fromUserId"] = fu }
     case .ping: d = ["t": "PING"]
     case .unknown: d = ["t": "UNKNOWN"]
@@ -65,6 +65,8 @@ enum SignalMessage: Codable {
     let name: String?
     let sdp: String?
     let candidate: String?
+    let sdpMid: String?
+    let sdpMLineIndex: Int?
     let from: String?
     let fromUserId: String?
   }

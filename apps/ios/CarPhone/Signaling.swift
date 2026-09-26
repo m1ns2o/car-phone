@@ -108,11 +108,11 @@ final class SignalingClient {
       delegate?.signalingDidOpen()
     case "ROOM_PEER_JOINED":
       delegate?.signalingPeerJoined(name: msg.name)
-    case "OFFER":
+    case "SDP_OFFER":
       if let sdp = msg.sdp { delegate?.signalingGotOffer(sdp: sdp) }
-    case "ANSWER":
+    case "SDP_ANSWER":
       if let sdp = msg.sdp { delegate?.signalingGotAnswer(sdp: sdp) }
-    case "CANDIDATE":
+    case "ICE_CANDIDATE":
       if let c = msg.candidate { delegate?.signalingGotCandidate(c) }
     case "CALL_INVITE_DELIVERED", "CALL_INVITE":
       if let r = msg.roomId, let f = msg.from {

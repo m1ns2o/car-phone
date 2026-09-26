@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.carphone.app-mergeDebugResources-47:/values-v30/values-v30.xml",
+            "map": [
+                {
+                    "source": "/Users/m1ns2o128/.gradle/caches/8.13/transforms/09097e23af137302217ece81c195e39f/transformed/material3-release/res/values-v30/values-v30.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "72",
+                        "endOffsets": "123"
+                    }
+                }
+            ]
+        }
+    ]
+}
