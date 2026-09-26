@@ -9,6 +9,7 @@
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
 
     <application
         android:name=".App"
@@ -31,6 +32,24 @@
             android:name=".call.CallService"
             android:exported="false"
             android:foregroundServiceType="microphone" />
+
+        <!-- FCM 수신 (수동 초기화, google-services.json 불필요) -->
+        <service
+            android:name=".push.CarPhoneMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!-- 잠금화면 수신통화 오버레이 -->
+        <activity
+            android:name=".call.IncomingCallActivity"
+            android:exported="false"
+            android:launchMode="singleInstance"
+            android:excludeFromRecents="true"
+            android:showWhenLocked="true"
+            android:turnScreenOn="true" />
 
         <!-- Android Auto: 미디어 카테고리로 노출 (통화=재생) -->
         <service

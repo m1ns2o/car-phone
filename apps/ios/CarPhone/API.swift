@@ -48,6 +48,12 @@ final class API {
     try await send(try req("/api/auth/me"), as: User.self)
   }
 
+  func health() async throws -> String {
+    let req = try self.req("/api/health", auth: false)
+    let (data, _) = try await session.data(for: req)
+    return String(data: data, encoding: .utf8) ?? "-"
+  }
+
   // MARK: - friends
   struct UsernameBody: Encodable { let username: String }
 
@@ -91,10 +97,13 @@ final class API {
     try await send(try req("/api/calls/history"), as: [CallRecord].self)
   }
 
-  // MARK: - push (서버에 추가 예정: POST /api/push/token)
+  // MARK: - push
+  struct PushTokenBody: Encodable { let platform: String; let token: String }
+
   func registerPushToken(_ hex: String) async throws {
-    // 서버 엔드포인트 추가 전까지 조용히 무시
-    _ = hex
+    _ = try await send(
+      try req("/api/push/token", method: "POST", body: PushTokenBody(platform: "ios", token: hex)),
+      as: Empty.self)
   }
 }
 

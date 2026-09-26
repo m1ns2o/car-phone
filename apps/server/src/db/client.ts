@@ -58,6 +58,14 @@ export function migrate(): void {
     duration_sec INTEGER NOT NULL DEFAULT 0
   );
   CREATE INDEX IF NOT EXISTS calls_participants_idx ON calls (caller_id, callee_id);
+
+  CREATE TABLE IF NOT EXISTS push_tokens (
+    user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    platform TEXT NOT NULL CHECK (platform IN ('android','ios')),
+    token TEXT NOT NULL,
+    updated_at TEXT NOT NULL DEFAULT (datetime('now')),
+    UNIQUE (user_id, platform)
+  );
   `);
   // 구 PG 스키마에서 넘어온 DB 대비 (google_sub이 없을 수 있음)
   const cols = db.prepare(`PRAGMA table_info(users)`).all() as { name: string }[];

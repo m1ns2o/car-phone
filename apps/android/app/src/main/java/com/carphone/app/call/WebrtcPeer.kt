@@ -28,6 +28,8 @@ class WebrtcPeer(
     interface Callback {
         fun onLocalSdp(sdp: String, type: String) // "offer" | "answer"
         fun onCandidate(candidate: String, sdpMid: String?, sdpMLineIndex: Int?)
+        fun onConnectionState(state: String)
+        fun onIceState(state: String)
         fun onConnected()
         fun onFailed()
         fun onRemoteAudio()
@@ -70,15 +72,18 @@ class WebrtcPeer(
                 cb.onCandidate(c.sdp, c.sdpMid, c.sdpMLineIndex)
             }
             override fun onConnectionChange(state: PeerConnection.PeerConnectionState) {
+                cb.onConnectionState(state.name.lowercase())
                 when (state) {
                     PeerConnection.PeerConnectionState.CONNECTED -> cb.onConnected()
                     PeerConnection.PeerConnectionState.FAILED -> cb.onFailed()
                     else -> {}
                 }
             }
+            override fun onIceConnectionChange(s: PeerConnection.IceConnectionState) {
+                cb.onIceState(s.name.lowercase())
+            }
             override fun onAddStream(stream: MediaStream) = cb.onRemoteAudio()
             override fun onSignalingChange(s: PeerConnection.SignalingState) {}
-            override fun onIceConnectionChange(s: PeerConnection.IceConnectionState) {}
             override fun onIceConnectionReceivingChange(b: Boolean) {}
             override fun onIceGatheringChange(s: PeerConnection.IceGatheringState) {}
             override fun onIceCandidatesRemoved(c: Array<out IceCandidate>) {}
@@ -126,7 +131,43 @@ class WebrtcPeer(
     }
 
     fun restartIce() {
-        pc?.restartIce()
+        try {
+            val p = pc ?: return
+            p.restartIce()
+            p.createOffer(object : SdpObserver {
+                override fun onCreateSuccess(s: SessionDescription) {
+                    cb.onLocalSdp(s.description, "offer")
+                    p.setLocalDescription(SimpleSdp {}, s)
+                }
+                override fun onSetSuccess() {}
+                override fun onCreateFailure(e: String) {}
+                override fun onSetFailure(e: String) {}
+            }, MediaConstraints())
+        } catch (_: Exception) { }
+    }
+
+    // 5초 폴링용 RTC 통계 (rtt/jitter/lost)
+    data class Stats(val rttMs: Double?, val jitterMs: Double?, val lost: Long?)
+
+    fun collectStats(done: (Stats) -> Unit) {
+        val p = pc ?: run { done(Stats(null, null, null)); return }
+        p.getStats { report ->
+            var rtt: Double? = null
+            var jitter: Double? = null
+            var lost: Long? = null
+            for ((_, v) in report.statsMap) {
+                val t = v.type.toString()
+                if (t.contains("inbound-rtp", true)) {
+                    (v.members["jitter"] as? Double)?.let { jitter = it * 1000 }
+                    (v.members["packetsLost"] as? Long)?.let { lost = it }
+                    (v.members["packetsLost"] as? Int)?.let { lost = it.toLong() }
+                }
+                if (t.contains("candidate-pair", true) && v.members["nominated"] == true) {
+                    (v.members["currentRoundTripTime"] as? Double)?.let { rtt = it * 1000 }
+                }
+            }
+            done(Stats(rtt, jitter, lost))
+        }
     }
 
     fun close() {

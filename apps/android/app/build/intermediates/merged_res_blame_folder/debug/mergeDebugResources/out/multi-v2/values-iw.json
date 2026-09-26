@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.carphone.app-mergeDebugResources-47:/values-iw/values-iw.xml",
+            "outputFile": "com.carphone.app-mergeDebugResources-49:/values-iw/values-iw.xml",
             "map": [
                 {
                     "source": "/Users/m1ns2o128/.gradle/caches/8.13/transforms/7dc984542f890fb4d15f803de6b709f9/transformed/foundation-release/res/values-iw/values-iw.xml",

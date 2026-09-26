@@ -32,220 +32,395 @@
 18    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 18-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:11:5-80
 18-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:11:22-77
-19
-20    <queries>
-20-->[androidx.car.app:app:1.7.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/c7222b3f3f0004be9d488a2a6faebef0/transformed/app-1.7.0/AndroidManifest.xml:23:5-28:15
-21        <provider
-21-->[androidx.car.app:app:1.7.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/c7222b3f3f0004be9d488a2a6faebef0/transformed/app-1.7.0/AndroidManifest.xml:24:9-27:43
-22            android:name="androidx.car.app.connection.provider"
-22-->[androidx.car.app:app:1.7.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/c7222b3f3f0004be9d488a2a6faebef0/transformed/app-1.7.0/AndroidManifest.xml:25:13-64
-23            android:authorities="androidx.car.app.connection" />
-23-->[androidx.car.app:app:1.7.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/c7222b3f3f0004be9d488a2a6faebef0/transformed/app-1.7.0/AndroidManifest.xml:26:13-62
-24    </queries>
-25
-26    <permission
-26-->[androidx.core:core:1.15.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f995daf47f1b0cc9742a90171c63ae1a/transformed/core-1.15.0/AndroidManifest.xml:22:5-24:47
-27        android:name="com.carphone.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-27-->[androidx.core:core:1.15.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f995daf47f1b0cc9742a90171c63ae1a/transformed/core-1.15.0/AndroidManifest.xml:23:9-81
-28        android:protectionLevel="signature" />
-28-->[androidx.core:core:1.15.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f995daf47f1b0cc9742a90171c63ae1a/transformed/core-1.15.0/AndroidManifest.xml:24:9-44
+19    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+19-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:12:5-81
+19-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:12:22-78
+20
+21    <queries>
+21-->[androidx.car.app:app:1.7.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/c7222b3f3f0004be9d488a2a6faebef0/transformed/app-1.7.0/AndroidManifest.xml:23:5-28:15
+22        <provider
+22-->[androidx.car.app:app:1.7.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/c7222b3f3f0004be9d488a2a6faebef0/transformed/app-1.7.0/AndroidManifest.xml:24:9-27:43
+23            android:name="androidx.car.app.connection.provider"
+23-->[androidx.car.app:app:1.7.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/c7222b3f3f0004be9d488a2a6faebef0/transformed/app-1.7.0/AndroidManifest.xml:25:13-64
+24            android:authorities="androidx.car.app.connection" />
+24-->[androidx.car.app:app:1.7.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/c7222b3f3f0004be9d488a2a6faebef0/transformed/app-1.7.0/AndroidManifest.xml:26:13-62
+25    </queries>
+26
+27    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+27-->[com.google.firebase:firebase-messaging:24.1.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/bd6176c0355726931ef5e35837076abc/transformed/firebase-messaging-24.1.0/AndroidManifest.xml:24:5-68
+27-->[com.google.firebase:firebase-messaging:24.1.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/bd6176c0355726931ef5e35837076abc/transformed/firebase-messaging-24.1.0/AndroidManifest.xml:24:22-65
+28    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+28-->[com.google.firebase:firebase-messaging:24.1.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/bd6176c0355726931ef5e35837076abc/transformed/firebase-messaging-24.1.0/AndroidManifest.xml:26:5-82
+28-->[com.google.firebase:firebase-messaging:24.1.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/bd6176c0355726931ef5e35837076abc/transformed/firebase-messaging-24.1.0/AndroidManifest.xml:26:22-79
 29
-30    <uses-permission android:name="com.carphone.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-30-->[androidx.core:core:1.15.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f995daf47f1b0cc9742a90171c63ae1a/transformed/core-1.15.0/AndroidManifest.xml:26:5-97
-30-->[androidx.core:core:1.15.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f995daf47f1b0cc9742a90171c63ae1a/transformed/core-1.15.0/AndroidManifest.xml:26:22-94
-31
-32    <application
-32-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:13:5-47:19
-33        android:name="com.carphone.app.App"
-33-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:14:9-28
-34        android:allowBackup="false"
-34-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:15:9-36
-35        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-35-->[androidx.core:core:1.15.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f995daf47f1b0cc9742a90171c63ae1a/transformed/core-1.15.0/AndroidManifest.xml:28:18-86
-36        android:debuggable="true"
-37        android:extractNativeLibs="false"
-38        android:label="CarPhone"
-38-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:16:9-33
-39        android:theme="@android:style/Theme.Material.NoActionBar" >
-39-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:17:9-66
-40        <activity
-40-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:19:9-27:20
-41            android:name="com.carphone.app.MainActivity"
-41-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:20:13-41
-42            android:exported="true"
-42-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:21:13-36
-43            android:launchMode="singleTask" >
-43-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:22:13-44
-44            <intent-filter>
-44-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:23:13-26:29
-45                <action android:name="android.intent.action.MAIN" />
-45-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:24:17-69
-45-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:24:25-66
-46
-47                <category android:name="android.intent.category.LAUNCHER" />
-47-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:25:17-77
-47-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:25:27-74
-48            </intent-filter>
-49        </activity>
+30    <permission
+30-->[androidx.core:core:1.15.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f995daf47f1b0cc9742a90171c63ae1a/transformed/core-1.15.0/AndroidManifest.xml:22:5-24:47
+31        android:name="com.carphone.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+31-->[androidx.core:core:1.15.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f995daf47f1b0cc9742a90171c63ae1a/transformed/core-1.15.0/AndroidManifest.xml:23:9-81
+32        android:protectionLevel="signature" />
+32-->[androidx.core:core:1.15.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f995daf47f1b0cc9742a90171c63ae1a/transformed/core-1.15.0/AndroidManifest.xml:24:9-44
+33
+34    <uses-permission android:name="com.carphone.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+34-->[androidx.core:core:1.15.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f995daf47f1b0cc9742a90171c63ae1a/transformed/core-1.15.0/AndroidManifest.xml:26:5-97
+34-->[androidx.core:core:1.15.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f995daf47f1b0cc9742a90171c63ae1a/transformed/core-1.15.0/AndroidManifest.xml:26:22-94
+35
+36    <application
+36-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:14:5-66:19
+37        android:name="com.carphone.app.App"
+37-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:15:9-28
+38        android:allowBackup="false"
+38-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:16:9-36
+39        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+39-->[androidx.core:core:1.15.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f995daf47f1b0cc9742a90171c63ae1a/transformed/core-1.15.0/AndroidManifest.xml:28:18-86
+40        android:debuggable="true"
+41        android:extractNativeLibs="false"
+42        android:label="CarPhone"
+42-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:17:9-33
+43        android:theme="@android:style/Theme.Material.NoActionBar" >
+43-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:18:9-66
+44        <activity
+44-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:20:9-28:20
+45            android:name="com.carphone.app.MainActivity"
+45-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:21:13-41
+46            android:exported="true"
+46-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:22:13-36
+47            android:launchMode="singleTask" >
+47-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:23:13-44
+48            <intent-filter>
+48-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:24:13-27:29
+49                <action android:name="android.intent.action.MAIN" />
+49-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:25:17-69
+49-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:25:25-66
 50
-51        <!-- 통화 유지용 포그라운드 서비스 (마이크) -->
-52        <service
-52-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:30:9-33:58
-53            android:name="com.carphone.app.call.CallService"
-53-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:31:13-45
-54            android:exported="false"
-54-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:32:13-37
-55            android:foregroundServiceType="microphone" />
-55-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:33:13-55
-56
-57        <!-- Android Auto: 미디어 카테고리로 노출 (통화=재생) -->
-58        <service
-58-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:36:9-43:19
-59            android:name="com.carphone.app.car.CarCallService"
-59-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:37:13-47
-60            android:exported="true" >
-60-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:38:13-36
-61            <intent-filter>
-61-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:39:13-42:29
-62                <action android:name="androidx.car.app.CarAppService" />
-62-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:40:17-73
-62-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:40:25-70
-63
-64                <category android:name="androidx.car.app.category.MEDIA" />
-64-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:41:17-76
-64-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:41:27-73
-65            </intent-filter>
-66        </service>
-67
-68        <meta-data
-68-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:44:9-46:33
-69            android:name="androidx.car.app.minCarApiLevel"
-69-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:45:13-59
-70            android:value="1" />
-70-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:46:13-30
-71
-72        <activity
-72-->[androidx.car.app:app:1.7.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/c7222b3f3f0004be9d488a2a6faebef0/transformed/app-1.7.0/AndroidManifest.xml:31:9-34:75
-73            android:name="androidx.car.app.CarAppPermissionActivity"
-73-->[androidx.car.app:app:1.7.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/c7222b3f3f0004be9d488a2a6faebef0/transformed/app-1.7.0/AndroidManifest.xml:32:13-69
-74            android:exported="false"
-74-->[androidx.car.app:app:1.7.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/c7222b3f3f0004be9d488a2a6faebef0/transformed/app-1.7.0/AndroidManifest.xml:33:13-37
-75            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-75-->[androidx.car.app:app:1.7.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/c7222b3f3f0004be9d488a2a6faebef0/transformed/app-1.7.0/AndroidManifest.xml:34:13-72
-76
-77        <receiver
-77-->[androidx.car.app:app:1.7.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/c7222b3f3f0004be9d488a2a6faebef0/transformed/app-1.7.0/AndroidManifest.xml:36:9-38:40
-78            android:name="androidx.car.app.notification.CarAppNotificationBroadcastReceiver"
-78-->[androidx.car.app:app:1.7.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/c7222b3f3f0004be9d488a2a6faebef0/transformed/app-1.7.0/AndroidManifest.xml:37:13-93
-79            android:exported="false" />
-79-->[androidx.car.app:app:1.7.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/c7222b3f3f0004be9d488a2a6faebef0/transformed/app-1.7.0/AndroidManifest.xml:38:13-37
-80
-81        <activity
-81-->[com.google.android.gms:play-services-auth:21.2.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/7d0e64c10c2f9b8c5ce094a2e96ba707/transformed/play-services-auth-21.2.0/AndroidManifest.xml:23:9-27:75
-82            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-82-->[com.google.android.gms:play-services-auth:21.2.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/7d0e64c10c2f9b8c5ce094a2e96ba707/transformed/play-services-auth-21.2.0/AndroidManifest.xml:24:13-93
-83            android:excludeFromRecents="true"
-83-->[com.google.android.gms:play-services-auth:21.2.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/7d0e64c10c2f9b8c5ce094a2e96ba707/transformed/play-services-auth-21.2.0/AndroidManifest.xml:25:13-46
-84            android:exported="false"
-84-->[com.google.android.gms:play-services-auth:21.2.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/7d0e64c10c2f9b8c5ce094a2e96ba707/transformed/play-services-auth-21.2.0/AndroidManifest.xml:26:13-37
-85            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-85-->[com.google.android.gms:play-services-auth:21.2.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/7d0e64c10c2f9b8c5ce094a2e96ba707/transformed/play-services-auth-21.2.0/AndroidManifest.xml:27:13-72
-86        <!--
-87            Service handling Google Sign-In user revocation. For apps that do not integrate with
-88            Google Sign-In, this service will never be started.
-89        -->
-90        <service
-90-->[com.google.android.gms:play-services-auth:21.2.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/7d0e64c10c2f9b8c5ce094a2e96ba707/transformed/play-services-auth-21.2.0/AndroidManifest.xml:33:9-37:51
-91            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-91-->[com.google.android.gms:play-services-auth:21.2.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/7d0e64c10c2f9b8c5ce094a2e96ba707/transformed/play-services-auth-21.2.0/AndroidManifest.xml:34:13-89
-92            android:exported="true"
-92-->[com.google.android.gms:play-services-auth:21.2.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/7d0e64c10c2f9b8c5ce094a2e96ba707/transformed/play-services-auth-21.2.0/AndroidManifest.xml:35:13-36
-93            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-93-->[com.google.android.gms:play-services-auth:21.2.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/7d0e64c10c2f9b8c5ce094a2e96ba707/transformed/play-services-auth-21.2.0/AndroidManifest.xml:36:13-107
-94            android:visibleToInstantApps="true" />
-94-->[com.google.android.gms:play-services-auth:21.2.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/7d0e64c10c2f9b8c5ce094a2e96ba707/transformed/play-services-auth-21.2.0/AndroidManifest.xml:37:13-48
-95
-96        <activity
-96-->[com.google.android.gms:play-services-base:18.3.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/a0126295fd68992e680f0d9aae3cd3a0/transformed/play-services-base-18.3.0/AndroidManifest.xml:20:9-22:45
-97            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-97-->[com.google.android.gms:play-services-base:18.3.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/a0126295fd68992e680f0d9aae3cd3a0/transformed/play-services-base-18.3.0/AndroidManifest.xml:20:19-85
-98            android:exported="false"
-98-->[com.google.android.gms:play-services-base:18.3.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/a0126295fd68992e680f0d9aae3cd3a0/transformed/play-services-base-18.3.0/AndroidManifest.xml:22:19-43
-99            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-99-->[com.google.android.gms:play-services-base:18.3.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/a0126295fd68992e680f0d9aae3cd3a0/transformed/play-services-base-18.3.0/AndroidManifest.xml:21:19-78
-100
-101        <meta-data
-101-->[com.google.android.gms:play-services-basement:18.3.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/5731e0aefb9554adb3275cd0e6082c3a/transformed/play-services-basement-18.3.0/AndroidManifest.xml:21:9-23:69
-102            android:name="com.google.android.gms.version"
-102-->[com.google.android.gms:play-services-basement:18.3.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/5731e0aefb9554adb3275cd0e6082c3a/transformed/play-services-basement-18.3.0/AndroidManifest.xml:22:13-58
-103            android:value="@integer/google_play_services_version" />
-103-->[com.google.android.gms:play-services-basement:18.3.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/5731e0aefb9554adb3275cd0e6082c3a/transformed/play-services-basement-18.3.0/AndroidManifest.xml:23:13-66
-104
-105        <provider
-105-->[androidx.emoji2:emoji2:1.3.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/834f8742058513e930ce2d3f1263d250/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
-106            android:name="androidx.startup.InitializationProvider"
-106-->[androidx.emoji2:emoji2:1.3.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/834f8742058513e930ce2d3f1263d250/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
-107            android:authorities="com.carphone.app.androidx-startup"
-107-->[androidx.emoji2:emoji2:1.3.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/834f8742058513e930ce2d3f1263d250/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
-108            android:exported="false" >
-108-->[androidx.emoji2:emoji2:1.3.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/834f8742058513e930ce2d3f1263d250/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
-109            <meta-data
-109-->[androidx.emoji2:emoji2:1.3.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/834f8742058513e930ce2d3f1263d250/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
-110                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-110-->[androidx.emoji2:emoji2:1.3.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/834f8742058513e930ce2d3f1263d250/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
-111                android:value="androidx.startup" />
-111-->[androidx.emoji2:emoji2:1.3.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/834f8742058513e930ce2d3f1263d250/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
-112            <meta-data
-112-->[androidx.lifecycle:lifecycle-process:2.8.6] /Users/m1ns2o128/.gradle/caches/8.13/transforms/389f06a217f5627bf1d1e7378b324606/transformed/lifecycle-process-2.8.6/AndroidManifest.xml:29:13-31:52
-113                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-113-->[androidx.lifecycle:lifecycle-process:2.8.6] /Users/m1ns2o128/.gradle/caches/8.13/transforms/389f06a217f5627bf1d1e7378b324606/transformed/lifecycle-process-2.8.6/AndroidManifest.xml:30:17-78
-114                android:value="androidx.startup" />
-114-->[androidx.lifecycle:lifecycle-process:2.8.6] /Users/m1ns2o128/.gradle/caches/8.13/transforms/389f06a217f5627bf1d1e7378b324606/transformed/lifecycle-process-2.8.6/AndroidManifest.xml:31:17-49
-115            <meta-data
-115-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
-116                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-116-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
-117                android:value="androidx.startup" />
-117-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
-118        </provider>
-119
-120        <receiver
-120-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
-121            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-121-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
-122            android:directBootAware="false"
-122-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
-123            android:enabled="true"
-123-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
-124            android:exported="true"
-124-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
-125            android:permission="android.permission.DUMP" >
-125-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
-126            <intent-filter>
-126-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
-127                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-127-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
-127-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
-128            </intent-filter>
-129            <intent-filter>
-129-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
-130                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-130-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
-130-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
-131            </intent-filter>
-132            <intent-filter>
-132-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
-133                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-133-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
-133-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
-134            </intent-filter>
-135            <intent-filter>
-135-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
-136                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-136-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
-136-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
-137            </intent-filter>
-138        </receiver>
-139    </application>
-140
-141</manifest>
+51                <category android:name="android.intent.category.LAUNCHER" />
+51-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:26:17-77
+51-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:26:27-74
+52            </intent-filter>
+53        </activity>
+54
+55        <!-- 통화 유지용 포그라운드 서비스 (마이크) -->
+56        <service
+56-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:31:9-34:58
+57            android:name="com.carphone.app.call.CallService"
+57-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:32:13-45
+58            android:exported="false"
+58-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:33:13-37
+59            android:foregroundServiceType="microphone" />
+59-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:34:13-55
+60
+61        <!-- FCM 수신 (수동 초기화, google-services.json 불필요) -->
+62        <service
+62-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:37:9-43:19
+63            android:name="com.carphone.app.push.CarPhoneMessagingService"
+63-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:38:13-58
+64            android:exported="false" >
+64-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:39:13-37
+65            <intent-filter>
+65-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:40:13-42:29
+66                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+66-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:41:17-78
+66-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:41:25-75
+67            </intent-filter>
+68        </service>
+69
+70        <!-- 잠금화면 수신통화 오버레이 -->
+71        <activity
+71-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:46:9-52:43
+72            android:name="com.carphone.app.call.IncomingCallActivity"
+72-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:47:13-54
+73            android:excludeFromRecents="true"
+73-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:50:13-46
+74            android:exported="true"
+74-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:48:13-36
+75            android:launchMode="singleInstance"
+75-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:49:13-48
+76            android:showWhenLocked="true"
+76-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:51:13-42
+77            android:turnScreenOn="true" />
+77-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:52:13-40
+78
+79        <!-- Android Auto: 미디어 카테고리로 노출 (통화=재생) -->
+80        <service
+80-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:55:9-62:19
+81            android:name="com.carphone.app.car.CarCallService"
+81-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:56:13-47
+82            android:exported="true" >
+82-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:57:13-36
+83            <intent-filter>
+83-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:58:13-61:29
+84                <action android:name="androidx.car.app.CarAppService" />
+84-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:59:17-73
+84-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:59:25-70
+85
+86                <category android:name="androidx.car.app.category.MEDIA" />
+86-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:60:17-76
+86-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:60:27-73
+87            </intent-filter>
+88        </service>
+89
+90        <meta-data
+90-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:63:9-65:33
+91            android:name="androidx.car.app.minCarApiLevel"
+91-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:64:13-59
+92            android:value="1" />
+92-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:65:13-30
+93
+94        <activity
+94-->[androidx.car.app:app:1.7.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/c7222b3f3f0004be9d488a2a6faebef0/transformed/app-1.7.0/AndroidManifest.xml:31:9-34:75
+95            android:name="androidx.car.app.CarAppPermissionActivity"
+95-->[androidx.car.app:app:1.7.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/c7222b3f3f0004be9d488a2a6faebef0/transformed/app-1.7.0/AndroidManifest.xml:32:13-69
+96            android:exported="false"
+96-->[androidx.car.app:app:1.7.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/c7222b3f3f0004be9d488a2a6faebef0/transformed/app-1.7.0/AndroidManifest.xml:33:13-37
+97            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+97-->[androidx.car.app:app:1.7.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/c7222b3f3f0004be9d488a2a6faebef0/transformed/app-1.7.0/AndroidManifest.xml:34:13-72
+98
+99        <receiver
+99-->[androidx.car.app:app:1.7.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/c7222b3f3f0004be9d488a2a6faebef0/transformed/app-1.7.0/AndroidManifest.xml:36:9-38:40
+100            android:name="androidx.car.app.notification.CarAppNotificationBroadcastReceiver"
+100-->[androidx.car.app:app:1.7.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/c7222b3f3f0004be9d488a2a6faebef0/transformed/app-1.7.0/AndroidManifest.xml:37:13-93
+101            android:exported="false" />
+101-->[androidx.car.app:app:1.7.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/c7222b3f3f0004be9d488a2a6faebef0/transformed/app-1.7.0/AndroidManifest.xml:38:13-37
+102
+103        <activity
+103-->[com.google.android.gms:play-services-auth:21.2.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/7d0e64c10c2f9b8c5ce094a2e96ba707/transformed/play-services-auth-21.2.0/AndroidManifest.xml:23:9-27:75
+104            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+104-->[com.google.android.gms:play-services-auth:21.2.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/7d0e64c10c2f9b8c5ce094a2e96ba707/transformed/play-services-auth-21.2.0/AndroidManifest.xml:24:13-93
+105            android:excludeFromRecents="true"
+105-->[com.google.android.gms:play-services-auth:21.2.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/7d0e64c10c2f9b8c5ce094a2e96ba707/transformed/play-services-auth-21.2.0/AndroidManifest.xml:25:13-46
+106            android:exported="false"
+106-->[com.google.android.gms:play-services-auth:21.2.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/7d0e64c10c2f9b8c5ce094a2e96ba707/transformed/play-services-auth-21.2.0/AndroidManifest.xml:26:13-37
+107            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+107-->[com.google.android.gms:play-services-auth:21.2.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/7d0e64c10c2f9b8c5ce094a2e96ba707/transformed/play-services-auth-21.2.0/AndroidManifest.xml:27:13-72
+108        <!--
+109            Service handling Google Sign-In user revocation. For apps that do not integrate with
+110            Google Sign-In, this service will never be started.
+111        -->
+112        <service
+112-->[com.google.android.gms:play-services-auth:21.2.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/7d0e64c10c2f9b8c5ce094a2e96ba707/transformed/play-services-auth-21.2.0/AndroidManifest.xml:33:9-37:51
+113            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+113-->[com.google.android.gms:play-services-auth:21.2.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/7d0e64c10c2f9b8c5ce094a2e96ba707/transformed/play-services-auth-21.2.0/AndroidManifest.xml:34:13-89
+114            android:exported="true"
+114-->[com.google.android.gms:play-services-auth:21.2.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/7d0e64c10c2f9b8c5ce094a2e96ba707/transformed/play-services-auth-21.2.0/AndroidManifest.xml:35:13-36
+115            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+115-->[com.google.android.gms:play-services-auth:21.2.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/7d0e64c10c2f9b8c5ce094a2e96ba707/transformed/play-services-auth-21.2.0/AndroidManifest.xml:36:13-107
+116            android:visibleToInstantApps="true" />
+116-->[com.google.android.gms:play-services-auth:21.2.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/7d0e64c10c2f9b8c5ce094a2e96ba707/transformed/play-services-auth-21.2.0/AndroidManifest.xml:37:13-48
+117
+118        <receiver
+118-->[com.google.firebase:firebase-messaging:24.1.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/bd6176c0355726931ef5e35837076abc/transformed/firebase-messaging-24.1.0/AndroidManifest.xml:29:9-40:20
+119            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+119-->[com.google.firebase:firebase-messaging:24.1.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/bd6176c0355726931ef5e35837076abc/transformed/firebase-messaging-24.1.0/AndroidManifest.xml:30:13-78
+120            android:exported="true"
+120-->[com.google.firebase:firebase-messaging:24.1.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/bd6176c0355726931ef5e35837076abc/transformed/firebase-messaging-24.1.0/AndroidManifest.xml:31:13-36
+121            android:permission="com.google.android.c2dm.permission.SEND" >
+121-->[com.google.firebase:firebase-messaging:24.1.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/bd6176c0355726931ef5e35837076abc/transformed/firebase-messaging-24.1.0/AndroidManifest.xml:32:13-73
+122            <intent-filter>
+122-->[com.google.firebase:firebase-messaging:24.1.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/bd6176c0355726931ef5e35837076abc/transformed/firebase-messaging-24.1.0/AndroidManifest.xml:33:13-35:29
+123                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+123-->[com.google.firebase:firebase-messaging:24.1.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/bd6176c0355726931ef5e35837076abc/transformed/firebase-messaging-24.1.0/AndroidManifest.xml:34:17-81
+123-->[com.google.firebase:firebase-messaging:24.1.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/bd6176c0355726931ef5e35837076abc/transformed/firebase-messaging-24.1.0/AndroidManifest.xml:34:25-78
+124            </intent-filter>
+125
+126            <meta-data
+126-->[com.google.firebase:firebase-messaging:24.1.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/bd6176c0355726931ef5e35837076abc/transformed/firebase-messaging-24.1.0/AndroidManifest.xml:37:13-39:40
+127                android:name="com.google.android.gms.cloudmessaging.FINISHED_AFTER_HANDLED"
+127-->[com.google.firebase:firebase-messaging:24.1.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/bd6176c0355726931ef5e35837076abc/transformed/firebase-messaging-24.1.0/AndroidManifest.xml:38:17-92
+128                android:value="true" />
+128-->[com.google.firebase:firebase-messaging:24.1.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/bd6176c0355726931ef5e35837076abc/transformed/firebase-messaging-24.1.0/AndroidManifest.xml:39:17-37
+129        </receiver>
+130        <!--
+131             FirebaseMessagingService performs security checks at runtime,
+132             but set to not exported to explicitly avoid allowing another app to call it.
+133        -->
+134        <service
+134-->[com.google.firebase:firebase-messaging:24.1.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/bd6176c0355726931ef5e35837076abc/transformed/firebase-messaging-24.1.0/AndroidManifest.xml:46:9-53:19
+135            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+135-->[com.google.firebase:firebase-messaging:24.1.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/bd6176c0355726931ef5e35837076abc/transformed/firebase-messaging-24.1.0/AndroidManifest.xml:47:13-82
+136            android:directBootAware="true"
+136-->[com.google.firebase:firebase-messaging:24.1.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/bd6176c0355726931ef5e35837076abc/transformed/firebase-messaging-24.1.0/AndroidManifest.xml:48:13-43
+137            android:exported="false" >
+137-->[com.google.firebase:firebase-messaging:24.1.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/bd6176c0355726931ef5e35837076abc/transformed/firebase-messaging-24.1.0/AndroidManifest.xml:49:13-37
+138            <intent-filter android:priority="-500" >
+138-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:40:13-42:29
+139                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+139-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:41:17-78
+139-->/Users/m1ns2o128/Documents/project/carphone/apps/android/app/src/main/AndroidManifest.xml:41:25-75
+140            </intent-filter>
+141        </service>
+142        <service
+142-->[com.google.firebase:firebase-messaging:24.1.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/bd6176c0355726931ef5e35837076abc/transformed/firebase-messaging-24.1.0/AndroidManifest.xml:54:9-63:19
+143            android:name="com.google.firebase.components.ComponentDiscoveryService"
+143-->[com.google.firebase:firebase-messaging:24.1.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/bd6176c0355726931ef5e35837076abc/transformed/firebase-messaging-24.1.0/AndroidManifest.xml:55:13-84
+144            android:directBootAware="true"
+144-->[com.google.firebase:firebase-common:21.0.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/6f50698db7771f042d1a7e6c09ac6345/transformed/firebase-common-21.0.0/AndroidManifest.xml:32:13-43
+145            android:exported="false" >
+145-->[com.google.firebase:firebase-messaging:24.1.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/bd6176c0355726931ef5e35837076abc/transformed/firebase-messaging-24.1.0/AndroidManifest.xml:56:13-37
+146            <meta-data
+146-->[com.google.firebase:firebase-messaging:24.1.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/bd6176c0355726931ef5e35837076abc/transformed/firebase-messaging-24.1.0/AndroidManifest.xml:57:13-59:85
+147                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingKtxRegistrar"
+147-->[com.google.firebase:firebase-messaging:24.1.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/bd6176c0355726931ef5e35837076abc/transformed/firebase-messaging-24.1.0/AndroidManifest.xml:58:17-122
+148                android:value="com.google.firebase.components.ComponentRegistrar" />
+148-->[com.google.firebase:firebase-messaging:24.1.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/bd6176c0355726931ef5e35837076abc/transformed/firebase-messaging-24.1.0/AndroidManifest.xml:59:17-82
+149            <meta-data
+149-->[com.google.firebase:firebase-messaging:24.1.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/bd6176c0355726931ef5e35837076abc/transformed/firebase-messaging-24.1.0/AndroidManifest.xml:60:13-62:85
+150                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+150-->[com.google.firebase:firebase-messaging:24.1.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/bd6176c0355726931ef5e35837076abc/transformed/firebase-messaging-24.1.0/AndroidManifest.xml:61:17-119
+151                android:value="com.google.firebase.components.ComponentRegistrar" />
+151-->[com.google.firebase:firebase-messaging:24.1.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/bd6176c0355726931ef5e35837076abc/transformed/firebase-messaging-24.1.0/AndroidManifest.xml:62:17-82
+152            <meta-data
+152-->[com.google.firebase:firebase-installations:18.0.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/61fd46bcd6cb1c40f70d5d14fc8ce7df/transformed/firebase-installations-18.0.0/AndroidManifest.xml:15:13-17:85
+153                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar"
+153-->[com.google.firebase:firebase-installations:18.0.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/61fd46bcd6cb1c40f70d5d14fc8ce7df/transformed/firebase-installations-18.0.0/AndroidManifest.xml:16:17-130
+154                android:value="com.google.firebase.components.ComponentRegistrar" />
+154-->[com.google.firebase:firebase-installations:18.0.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/61fd46bcd6cb1c40f70d5d14fc8ce7df/transformed/firebase-installations-18.0.0/AndroidManifest.xml:17:17-82
+155            <meta-data
+155-->[com.google.firebase:firebase-installations:18.0.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/61fd46bcd6cb1c40f70d5d14fc8ce7df/transformed/firebase-installations-18.0.0/AndroidManifest.xml:18:13-20:85
+156                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+156-->[com.google.firebase:firebase-installations:18.0.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/61fd46bcd6cb1c40f70d5d14fc8ce7df/transformed/firebase-installations-18.0.0/AndroidManifest.xml:19:17-127
+157                android:value="com.google.firebase.components.ComponentRegistrar" />
+157-->[com.google.firebase:firebase-installations:18.0.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/61fd46bcd6cb1c40f70d5d14fc8ce7df/transformed/firebase-installations-18.0.0/AndroidManifest.xml:20:17-82
+158            <meta-data
+158-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/8467f82de2276f5c4f274c97eebc58ef/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:12:13-14:85
+159                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+159-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/8467f82de2276f5c4f274c97eebc58ef/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:13:17-116
+160                android:value="com.google.firebase.components.ComponentRegistrar" />
+160-->[com.google.firebase:firebase-common-ktx:21.0.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/8467f82de2276f5c4f274c97eebc58ef/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:14:17-82
+161            <meta-data
+161-->[com.google.firebase:firebase-common:21.0.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/6f50698db7771f042d1a7e6c09ac6345/transformed/firebase-common-21.0.0/AndroidManifest.xml:35:13-37:85
+162                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+162-->[com.google.firebase:firebase-common:21.0.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/6f50698db7771f042d1a7e6c09ac6345/transformed/firebase-common-21.0.0/AndroidManifest.xml:36:17-109
+163                android:value="com.google.firebase.components.ComponentRegistrar" />
+163-->[com.google.firebase:firebase-common:21.0.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/6f50698db7771f042d1a7e6c09ac6345/transformed/firebase-common-21.0.0/AndroidManifest.xml:37:17-82
+164            <meta-data
+164-->[com.google.firebase:firebase-datatransport:18.2.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/13e8264224292476fbd6ad6c67722581/transformed/firebase-datatransport-18.2.0/AndroidManifest.xml:25:13-27:85
+165                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+165-->[com.google.firebase:firebase-datatransport:18.2.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/13e8264224292476fbd6ad6c67722581/transformed/firebase-datatransport-18.2.0/AndroidManifest.xml:26:17-115
+166                android:value="com.google.firebase.components.ComponentRegistrar" />
+166-->[com.google.firebase:firebase-datatransport:18.2.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/13e8264224292476fbd6ad6c67722581/transformed/firebase-datatransport-18.2.0/AndroidManifest.xml:27:17-82
+167        </service>
+168
+169        <activity
+169-->[com.google.android.gms:play-services-base:18.3.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/a0126295fd68992e680f0d9aae3cd3a0/transformed/play-services-base-18.3.0/AndroidManifest.xml:20:9-22:45
+170            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+170-->[com.google.android.gms:play-services-base:18.3.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/a0126295fd68992e680f0d9aae3cd3a0/transformed/play-services-base-18.3.0/AndroidManifest.xml:20:19-85
+171            android:exported="false"
+171-->[com.google.android.gms:play-services-base:18.3.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/a0126295fd68992e680f0d9aae3cd3a0/transformed/play-services-base-18.3.0/AndroidManifest.xml:22:19-43
+172            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+172-->[com.google.android.gms:play-services-base:18.3.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/a0126295fd68992e680f0d9aae3cd3a0/transformed/play-services-base-18.3.0/AndroidManifest.xml:21:19-78
+173
+174        <provider
+174-->[com.google.firebase:firebase-common:21.0.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/6f50698db7771f042d1a7e6c09ac6345/transformed/firebase-common-21.0.0/AndroidManifest.xml:23:9-28:39
+175            android:name="com.google.firebase.provider.FirebaseInitProvider"
+175-->[com.google.firebase:firebase-common:21.0.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/6f50698db7771f042d1a7e6c09ac6345/transformed/firebase-common-21.0.0/AndroidManifest.xml:24:13-77
+176            android:authorities="com.carphone.app.firebaseinitprovider"
+176-->[com.google.firebase:firebase-common:21.0.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/6f50698db7771f042d1a7e6c09ac6345/transformed/firebase-common-21.0.0/AndroidManifest.xml:25:13-72
+177            android:directBootAware="true"
+177-->[com.google.firebase:firebase-common:21.0.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/6f50698db7771f042d1a7e6c09ac6345/transformed/firebase-common-21.0.0/AndroidManifest.xml:26:13-43
+178            android:exported="false"
+178-->[com.google.firebase:firebase-common:21.0.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/6f50698db7771f042d1a7e6c09ac6345/transformed/firebase-common-21.0.0/AndroidManifest.xml:27:13-37
+179            android:initOrder="100" />
+179-->[com.google.firebase:firebase-common:21.0.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/6f50698db7771f042d1a7e6c09ac6345/transformed/firebase-common-21.0.0/AndroidManifest.xml:28:13-36
+180        <provider
+180-->[androidx.emoji2:emoji2:1.3.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/834f8742058513e930ce2d3f1263d250/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+181            android:name="androidx.startup.InitializationProvider"
+181-->[androidx.emoji2:emoji2:1.3.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/834f8742058513e930ce2d3f1263d250/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+182            android:authorities="com.carphone.app.androidx-startup"
+182-->[androidx.emoji2:emoji2:1.3.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/834f8742058513e930ce2d3f1263d250/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+183            android:exported="false" >
+183-->[androidx.emoji2:emoji2:1.3.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/834f8742058513e930ce2d3f1263d250/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+184            <meta-data
+184-->[androidx.emoji2:emoji2:1.3.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/834f8742058513e930ce2d3f1263d250/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+185                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+185-->[androidx.emoji2:emoji2:1.3.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/834f8742058513e930ce2d3f1263d250/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+186                android:value="androidx.startup" />
+186-->[androidx.emoji2:emoji2:1.3.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/834f8742058513e930ce2d3f1263d250/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+187            <meta-data
+187-->[androidx.lifecycle:lifecycle-process:2.8.6] /Users/m1ns2o128/.gradle/caches/8.13/transforms/389f06a217f5627bf1d1e7378b324606/transformed/lifecycle-process-2.8.6/AndroidManifest.xml:29:13-31:52
+188                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+188-->[androidx.lifecycle:lifecycle-process:2.8.6] /Users/m1ns2o128/.gradle/caches/8.13/transforms/389f06a217f5627bf1d1e7378b324606/transformed/lifecycle-process-2.8.6/AndroidManifest.xml:30:17-78
+189                android:value="androidx.startup" />
+189-->[androidx.lifecycle:lifecycle-process:2.8.6] /Users/m1ns2o128/.gradle/caches/8.13/transforms/389f06a217f5627bf1d1e7378b324606/transformed/lifecycle-process-2.8.6/AndroidManifest.xml:31:17-49
+190            <meta-data
+190-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+191                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+191-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+192                android:value="androidx.startup" />
+192-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+193        </provider>
+194
+195        <meta-data
+195-->[com.google.android.gms:play-services-basement:18.3.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/5731e0aefb9554adb3275cd0e6082c3a/transformed/play-services-basement-18.3.0/AndroidManifest.xml:21:9-23:69
+196            android:name="com.google.android.gms.version"
+196-->[com.google.android.gms:play-services-basement:18.3.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/5731e0aefb9554adb3275cd0e6082c3a/transformed/play-services-basement-18.3.0/AndroidManifest.xml:22:13-58
+197            android:value="@integer/google_play_services_version" />
+197-->[com.google.android.gms:play-services-basement:18.3.0] /Users/m1ns2o128/.gradle/caches/8.13/transforms/5731e0aefb9554adb3275cd0e6082c3a/transformed/play-services-basement-18.3.0/AndroidManifest.xml:23:13-66
+198
+199        <service
+199-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/m1ns2o128/.gradle/caches/8.13/transforms/7ca4febc4308f4dddfd68c1e2b5f8681/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:28:9-34:19
+200            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+200-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/m1ns2o128/.gradle/caches/8.13/transforms/7ca4febc4308f4dddfd68c1e2b5f8681/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:29:13-103
+201            android:exported="false" >
+201-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/m1ns2o128/.gradle/caches/8.13/transforms/7ca4febc4308f4dddfd68c1e2b5f8681/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:30:13-37
+202            <meta-data
+202-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/m1ns2o128/.gradle/caches/8.13/transforms/7ca4febc4308f4dddfd68c1e2b5f8681/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:31:13-33:39
+203                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+203-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/m1ns2o128/.gradle/caches/8.13/transforms/7ca4febc4308f4dddfd68c1e2b5f8681/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:32:17-94
+204                android:value="cct" />
+204-->[com.google.android.datatransport:transport-backend-cct:3.1.9] /Users/m1ns2o128/.gradle/caches/8.13/transforms/7ca4febc4308f4dddfd68c1e2b5f8681/transformed/transport-backend-cct-3.1.9/AndroidManifest.xml:33:17-36
+205        </service>
+206        <service
+206-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/m1ns2o128/.gradle/caches/8.13/transforms/25ca2fc90b64d38de1a10780e31020ca/transformed/transport-runtime-3.1.9/AndroidManifest.xml:26:9-30:19
+207            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+207-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/m1ns2o128/.gradle/caches/8.13/transforms/25ca2fc90b64d38de1a10780e31020ca/transformed/transport-runtime-3.1.9/AndroidManifest.xml:27:13-117
+208            android:exported="false"
+208-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/m1ns2o128/.gradle/caches/8.13/transforms/25ca2fc90b64d38de1a10780e31020ca/transformed/transport-runtime-3.1.9/AndroidManifest.xml:28:13-37
+209            android:permission="android.permission.BIND_JOB_SERVICE" >
+209-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/m1ns2o128/.gradle/caches/8.13/transforms/25ca2fc90b64d38de1a10780e31020ca/transformed/transport-runtime-3.1.9/AndroidManifest.xml:29:13-69
+210        </service>
+211
+212        <receiver
+212-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/m1ns2o128/.gradle/caches/8.13/transforms/25ca2fc90b64d38de1a10780e31020ca/transformed/transport-runtime-3.1.9/AndroidManifest.xml:32:9-34:40
+213            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+213-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/m1ns2o128/.gradle/caches/8.13/transforms/25ca2fc90b64d38de1a10780e31020ca/transformed/transport-runtime-3.1.9/AndroidManifest.xml:33:13-132
+214            android:exported="false" />
+214-->[com.google.android.datatransport:transport-runtime:3.1.9] /Users/m1ns2o128/.gradle/caches/8.13/transforms/25ca2fc90b64d38de1a10780e31020ca/transformed/transport-runtime-3.1.9/AndroidManifest.xml:34:13-37
+215        <receiver
+215-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+216            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+216-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+217            android:directBootAware="false"
+217-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+218            android:enabled="true"
+218-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+219            android:exported="true"
+219-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+220            android:permission="android.permission.DUMP" >
+220-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+221            <intent-filter>
+221-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+222                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+222-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+222-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+223            </intent-filter>
+224            <intent-filter>
+224-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+225                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+225-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+225-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+226            </intent-filter>
+227            <intent-filter>
+227-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+228                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+228-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+228-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+229            </intent-filter>
+230            <intent-filter>
+230-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+231                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+231-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+231-->[androidx.profileinstaller:profileinstaller:1.3.1] /Users/m1ns2o128/.gradle/caches/8.13/transforms/f12d6b79eb49ef7d19acd3564e107345/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
+232            </intent-filter>
+233        </receiver>
+234    </application>
+235
+236</manifest>

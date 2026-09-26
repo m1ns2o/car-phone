@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.carphone.app-mergeDebugResources-47:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.carphone.app-mergeDebugResources-49:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "/Users/m1ns2o128/.gradle/caches/8.13/transforms/c7222b3f3f0004be9d488a2a6faebef0/transformed/app-1.7.0/res/values-night-v8/values-night-v8.xml",

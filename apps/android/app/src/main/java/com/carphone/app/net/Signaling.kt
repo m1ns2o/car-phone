@@ -23,6 +23,8 @@ class Signaling(
     interface Callback {
         fun onOpen()
         fun onPeerJoined(name: String?)
+        fun onPeerLeft()
+        fun onCallEnd()
         fun onOffer(sdp: String)
         fun onAnswer(sdp: String)
         fun onCandidate(candidate: String, sdpMid: String?, sdpMLineIndex: Int?)
@@ -81,6 +83,9 @@ class Signaling(
     }
 
     fun sendOffer(sdp: String) = send(obj("SDP_OFFER").put("roomId", roomId).put("sdp", sdp))
+    fun sendCallRequest(from: String) = send(obj("CALL_REQUEST").put("roomId", roomId).put("from", from))
+    fun sendCallState(state: String) = send(obj("CALL_STATE").put("roomId", roomId).put("state", state))
+    fun sendCallEnd() = send(obj("CALL_END").put("roomId", roomId))
     fun sendAnswer(sdp: String) = send(obj("SDP_ANSWER").put("roomId", roomId).put("sdp", sdp))
     fun sendCandidate(candidate: String, sdpMid: String?, sdpMLineIndex: Int?) {
         val o = obj("ICE_CANDIDATE").put("roomId", roomId).put("candidate", candidate)
@@ -110,6 +115,8 @@ class Signaling(
         val o = try { JSONObject(text) } catch (_: Exception) { return }
         when (o.optString("t")) {
             "ROOM_PEER_JOINED" -> cb.onPeerJoined(o.optString("name", null))
+            "ROOM_PEER_LEFT" -> cb.onPeerLeft()
+            "CALL_END" -> cb.onCallEnd()
             "SDP_OFFER" -> o.optString("sdp", null)?.let { cb.onOffer(it) }
             "SDP_ANSWER" -> o.optString("sdp", null)?.let { cb.onAnswer(it) }
             "ICE_CANDIDATE" -> {

@@ -4,6 +4,12 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
+import java.util.Properties
+
+val localProps = Properties()
+rootProject.file("local.properties").takeIf { it.exists() }?.inputStream()?.use { localProps.load(it) }
+fun fb(key: String): String = (localProps.getProperty(key) ?: System.getenv(key) ?: "").trim()
+
 android {
     namespace = "com.carphone.app"
     compileSdk = 35
@@ -30,6 +36,14 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
+    }
+    defaultConfig {
+        // Firebase 수동 초기화용 (local.properties에 없으면 빈값 → FCM 비활성)
+        buildConfigField("String", "FIREBASE_API_KEY", "\"${fb("firebase.apiKey")}\"")
+        buildConfigField("String", "FIREBASE_APP_ID", "\"${fb("firebase.appId")}\"")
+        buildConfigField("String", "FIREBASE_PROJECT_ID", "\"${fb("firebase.projectId")}\"")
+        buildConfigField("String", "FIREBASE_SENDER_ID", "\"${fb("firebase.senderId")}\"")
     }
 }
 
@@ -56,4 +70,8 @@ dependencies {
 
     // Google 로그인 (런타임 설정 후 활성화)
     implementation("com.google.android.gms:play-services-auth:21.2.0")
+
+    // FCM (google-services.json 없이 수동 초기화 — local.properties 값 필요)
+    implementation(platform("com.google.firebase:firebase-bom:33.7.0"))
+    implementation("com.google.firebase:firebase-messaging")
 }

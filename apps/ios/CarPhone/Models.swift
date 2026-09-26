@@ -40,6 +40,9 @@ enum SignalMessage: Codable {
   case answer(roomId: String, sdp: String)
   case candidate(roomId: String, candidate: String)
   case callInvite(roomId: String, toUserId: String, from: String, fromUserId: String?)
+  case callRequest(roomId: String, from: String)
+  case callState(roomId: String, state: String)
+  case callEnd(roomId: String)
   case ping
   case unknown
 
@@ -53,6 +56,9 @@ enum SignalMessage: Codable {
     case let .answer(r, s): d = ["t": "SDP_ANSWER", "roomId": r, "sdp": s]
     case let .candidate(r, c): d = ["t": "ICE_CANDIDATE", "roomId": r, "candidate": c]
     case let .callInvite(r, to, f, fu): d = ["t": "CALL_INVITE", "roomId": r, "toUserId": to, "from": f]; if let fu { d["fromUserId"] = fu }
+    case let .callRequest(r, f): d = ["t": "CALL_REQUEST", "roomId": r, "from": f]
+    case let .callState(r, s): d = ["t": "CALL_STATE", "roomId": r, "state": s]
+    case let .callEnd(r): d = ["t": "CALL_END", "roomId": r]
     case .ping: d = ["t": "PING"]
     case .unknown: d = ["t": "UNKNOWN"]
     }

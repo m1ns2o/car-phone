@@ -116,8 +116,12 @@ object Api {
     }
 
     // FCM 토큰 등록 (서버 POST /api/push/token 추가 후 연결)
-    suspend fun registerPushToken(token: String) {
-        // TODO: 서버 엔드포인트 추가 시 연결
+    // FCM/APNs 토큰 등록
+    suspend fun registerPushToken(token: String, platform: String = "android") {
+        call(
+            "/api/push/token", "POST",
+            JSONObject().put("platform", platform).put("token", token),
+        )
     }
 
     private suspend fun callArray(path: String): JSONArray = withContext(Dispatchers.IO) {

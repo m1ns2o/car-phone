@@ -27,7 +27,12 @@ struct CarPhoneApp: App {
 }
 
 struct MainTabs: View {
+  @EnvironmentObject var auth: AuthState
+  @StateObject private var inbox = IncomingInbox()
+  @State private var acceptTarget: AcceptTarget?
+
   var body: some View {
+    NavigationStack {
     TabView {
       HomeView()
         .tabItem { Label("홈", systemImage: "house") }
@@ -35,11 +40,53 @@ struct MainTabs: View {
         .tabItem { Label("친구", systemImage: "person.2") }
       HistoryView()
         .tabItem { Label("기록", systemImage: "clock") }
+      DiagView()
+        .tabItem { Label("진단", systemImage: "stethoscope") }
       SettingsView()
         .tabItem { Label("설정", systemImage: "gear") }
     }
-    .tint(Color(red: 0.2, green: 0.9, blue: 0.55))
+    .tint(.mint400)
+    .preferredColorScheme(.dark)
+    .onAppear { inbox.watch(isLoggedIn: auth.accessToken != nil) }
+    .onChange(of: auth.accessToken) { _, t in inbox.watch(isLoggedIn: t != nil) }
+    .onReceive(NotificationCenter.default.publisher(for: .acceptPushInvite)) { note in
+      let info = note.userInfo ?? [:]
+      acceptTarget = AcceptTarget(
+        room: info["roomId"] as? String ?? "",
+        peerId: (info["fromUserId"] as? String).flatMap { $0.isEmpty ? nil : $0 },
+        peerName: info["from"] as? String
+      )
+    }
+    .sheet(item: $inbox.invite) { inv in
+      IncomingCallSheet(invite: inv) {
+        inbox.invite = nil
+      } onAccept: {
+        inbox.invite = nil
+        acceptTarget = AcceptTarget(
+          room: inv.roomId,
+          peerId: inv.fromUserId,
+          peerName: inv.from
+        )
+      }
+    }
+    .navigationDestination(item: $acceptTarget) { t in
+      CallView(vm: CallViewModel(
+        roomId: t.room,
+        name: auth.me?.username ?? Store.shared.displayName,
+        peerUserId: t.peerId,
+        peerName: t.peerName,
+        myUserId: auth.me?.id
+      ))
+    }
+    }
   }
+}
+
+struct AcceptTarget: Identifiable, Hashable {
+  let id = UUID()
+  let room: String
+  let peerId: String?
+  let peerName: String?
 }
 
 final class AppDelegate: NSObject, UIApplicationDelegate {
@@ -48,6 +95,7 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
   ) -> Bool {
     // 착신 푸시: 일반 APNs (탭해서 입장). PushKit+CallKit은 전화 경로가 되므로 사용 금지.
+    PushCenter.setup()
     application.registerForRemoteNotifications()
     return true
   }

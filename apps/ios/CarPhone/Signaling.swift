@@ -4,6 +4,8 @@ import Foundation
 protocol SignalingDelegate: AnyObject {
   func signalingDidOpen()
   func signalingPeerJoined(name: String?)
+  func signalingPeerLeft()
+  func signalingCallEnd()
   func signalingGotOffer(sdp: String)
   func signalingGotAnswer(sdp: String)
   func signalingGotCandidate(_ json: String)
@@ -62,6 +64,9 @@ final class SignalingClient {
   func sendOffer(sdp: String) { send(.offer(roomId: roomId, sdp: sdp)) }
   func sendAnswer(sdp: String) { send(.answer(roomId: roomId, sdp: sdp)) }
   func sendCandidate(_ json: String) { send(.candidate(roomId: roomId, candidate: json)) }
+  func sendCallRequest(from: String) { send(.callRequest(roomId: roomId, from: from)) }
+  func sendCallState(_ state: String) { send(.callState(roomId: roomId, state: state)) }
+  func sendCallEnd() { send(.callEnd(roomId: roomId)) }
 
   private func sendJoin() {
     send(.roomJoin(roomId: roomId, name: name, token: Store.shared.accessToken()))
@@ -108,6 +113,10 @@ final class SignalingClient {
       delegate?.signalingDidOpen()
     case "ROOM_PEER_JOINED":
       delegate?.signalingPeerJoined(name: msg.name)
+    case "ROOM_PEER_LEFT":
+      delegate?.signalingPeerLeft()
+    case "CALL_END":
+      delegate?.signalingCallEnd()
     case "SDP_OFFER":
       if let sdp = msg.sdp { delegate?.signalingGotOffer(sdp: sdp) }
     case "SDP_ANSWER":

@@ -32,13 +32,22 @@ import java.util.Locale
 // 상태는 StateFlow로 UI(폰 화면·AA 화면)가 구독.
 class CallService : Service() {
 
-    enum class Status { IDLE, JOINING, WAITING, CONNECTING, CONNECTED, FAILED }
+    enum class Status { IDLE, JOINING, WAITING, CONNECTING, CONNECTED, FAILED, CLOSED }
+
+    data class Invite(
+        val roomId: String, val from: String, val fromUserId: String?,
+    )
 
     data class State(
         val status: Status = Status.IDLE,
         val roomId: String = "",
         val name: String = "",
         val peerName: String? = null,
+        val peerDisplayName: String? = null, // 친구 호출 시 표시명
+        val peerJoined: Boolean = false,
+        val pcState: String = "-",
+        val iceState: String = "-",
+        val rttMs: Double? = null,
         val muted: Boolean = false,
         val seconds: Int = 0,
         val logs: List<String> = emptyList(),
@@ -55,13 +64,18 @@ class CallService : Service() {
         const val EXTRA_INVITE_TO = "inviteTo"
         const val EXTRA_INVITE_FROM = "inviteFrom"
         const val EXTRA_PEER_ID = "peerId"
+        const val EXTRA_PEER_NAME = "peerName"
 
-        fun join(ctx: Context, room: String, name: String, inviteTo: String? = null, inviteFrom: String? = null, peerId: String? = null) {
+        fun join(
+            ctx: Context, room: String, name: String, inviteTo: String? = null,
+            inviteFrom: String? = null, peerId: String? = null, peerName: String? = null,
+        ) {
             val i = Intent(ctx, CallService::class.java).setAction(ACTION_JOIN)
                 .putExtra(EXTRA_ROOM, room).putExtra(EXTRA_NAME, name)
             inviteTo?.let { i.putExtra(EXTRA_INVITE_TO, it) }
             inviteFrom?.let { i.putExtra(EXTRA_INVITE_FROM, it) }
             peerId?.let { i.putExtra(EXTRA_PEER_ID, it) }
+            peerName?.let { i.putExtra(EXTRA_PEER_NAME, it) }
             ctx.startForegroundService(i)
         }
 
@@ -81,6 +95,7 @@ class CallService : Service() {
     private var inviteFrom: String? = null
     private var peerId: String? = null
     private var ticker: android.os.Handler? = null
+    private var statsTicker: android.os.Handler? = null
 
     inner class LocalBinder : Binder() {
         fun service() = this@CallService
@@ -105,7 +120,8 @@ class CallService : Service() {
                 inviteTo = intent.getStringExtra(EXTRA_INVITE_TO)
                 inviteFrom = intent.getStringExtra(EXTRA_INVITE_FROM)
                 peerId = intent.getStringExtra(EXTRA_PEER_ID)
-                startCall(room, name)
+                val peerName = intent.getStringExtra(EXTRA_PEER_NAME)
+                startCall(room, name, peerName)
             }
             ACTION_MUTE -> toggleMute()
             ACTION_LEAVE -> {
@@ -117,9 +133,16 @@ class CallService : Service() {
         return START_STICKY
     }
 
-    private fun startCall(roomId: String, name: String) {
+    private fun startCall(roomId: String, name: String, peerDisplayName: String? = null) {
         if (_state.value.status != Status.IDLE) return
-        update { copy(status = Status.JOINING, roomId = roomId, name = name, logs = emptyList(), seconds = 0) }
+        update {
+            copy(
+                status = Status.JOINING, roomId = roomId, name = name,
+                peerDisplayName = peerDisplayName, peerJoined = false,
+                pcState = "-", iceState = "-", rttMs = null,
+                logs = emptyList(), seconds = 0, error = null,
+            )
+        }
         log("joining $roomId as $name")
         startForegroundNotif()
         try {
@@ -135,6 +158,20 @@ class CallService : Service() {
             override fun onCandidate(candidate: String, sdpMid: String?, sdpMLineIndex: Int?) {
                 signaling?.sendCandidate(candidate, sdpMid, sdpMLineIndex)
             }
+            override fun onConnectionState(state: String) {
+                update { copy(pcState = state) }
+                log("connectionState=$state")
+                signaling?.sendCallState(state)
+                when (state) {
+                    "connected" -> { /* onConnected에서 처리 */ }
+                    "failed" -> { update { copy(status = Status.FAILED) }; log("connection failed") }
+                    "closed" -> { update { copy(status = Status.CLOSED) }; log("connection closed") }
+                }
+            }
+            override fun onIceState(state: String) {
+                update { copy(iceState = state) }
+                log("iceState=$state")
+            }
             override fun onConnected() { update { copy(status = Status.CONNECTED) }; log("connected") }
             override fun onFailed() { update { copy(status = Status.FAILED) }; log("connection failed") }
             override fun onRemoteAudio() { log("remote audio attached") }
@@ -144,8 +181,17 @@ class CallService : Service() {
             override fun onOpen() = log("ws open")
             override fun onPeerJoined(n: String?) {
                 signaling?.markPeerSeen()
-                update { copy(peerName = n) }
-                log("peer joined: ${n ?: "?"}")
+                update { copy(peerName = n, peerJoined = true) }
+                log("peer joined: ${n ?: "?"} — 통화 시작 버튼을 누르세요")
+            }
+            override fun onPeerLeft() {
+                update { copy(peerJoined = false) }
+                log("peer left")
+            }
+            override fun onCallEnd() {
+                update { copy(status = Status.CLOSED) }
+                log("peer hung up")
+                teardownPeer()
             }
             override fun onOffer(sdp: String) { log("got offer"); p.handleOffer(sdp) }
             override fun onAnswer(sdp: String) { log("got answer"); p.handleAnswer(sdp) }
@@ -167,6 +213,24 @@ class CallService : Service() {
                 h.postDelayed(this, 1000)
             }
         })
+        // getStats 폴링 (5초) — 안정성 검증용
+        val sh = android.os.Handler(mainLooper)
+        statsTicker = sh
+        sh.post(object : Runnable {
+            override fun run() {
+                if (_state.value.status == Status.CONNECTED) {
+                    peer?.collectStats { st ->
+                        update { copy(rttMs = st.rttMs) }
+                        log(
+                            "stats rtt=${st.rttMs?.let { "%.0f".format(it) } ?: "-"}ms " +
+                                "jitter=${st.jitterMs?.let { "%.1f".format(it) } ?: "-"}ms " +
+                                "lost=${st.lost ?: 0}",
+                        )
+                    }
+                }
+                sh.postDelayed(this, 5000)
+            }
+        })
     }
 
     fun beginCall() {
@@ -174,6 +238,12 @@ class CallService : Service() {
         update { copy(status = Status.CONNECTING) }
         log("sending offer…")
         peer?.startAsCaller()
+        signaling?.sendCallRequest(_state.value.name)
+    }
+
+    fun restartIce() {
+        log("ICE restart offer sent")
+        peer?.restartIce()
     }
 
     // offer 무응답/실패 시 재시도 (상대가 뒤늦게 입장한 경우)
@@ -192,7 +262,19 @@ class CallService : Service() {
         startForegroundNotif()
     }
 
-    private fun endCall(record: Boolean) {
+    private fun teardownPeer() {
+        try { signaling?.disconnect() } catch (_: Exception) { }
+        try { peer?.dispose() } catch (_: Exception) { }
+        signaling = null; peer = null
+        ticker?.removeCallbacksAndMessages(null)
+        statsTicker?.removeCallbacksAndMessages(null)
+        CallAudio.release(this)
+    }
+
+    private fun endCall(record: Boolean, notify: Boolean = true) {
+        if (notify) {
+            try { signaling?.sendCallEnd() } catch (_: Exception) { }
+        }
         val s = _state.value
         if (record && s.roomId.isNotEmpty()) {
             scope.launch {
@@ -202,11 +284,7 @@ class CallService : Service() {
             }
         }
         log("leave")
-        try { signaling?.disconnect() } catch (_: Exception) { }
-        try { peer?.dispose() } catch (_: Exception) { }
-        signaling = null; peer = null
-        ticker?.removeCallbacksAndMessages(null)
-        CallAudio.release(this)
+        teardownPeer()
         update { copy(status = Status.IDLE) }
     }
 

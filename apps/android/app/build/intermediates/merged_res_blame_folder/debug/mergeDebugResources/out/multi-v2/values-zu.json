@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.carphone.app-mergeDebugResources-47:/values-zu/values-zu.xml",
+            "outputFile": "com.carphone.app-mergeDebugResources-49:/values-zu/values-zu.xml",
             "map": [
                 {
                     "source": "/Users/m1ns2o128/.gradle/caches/8.13/transforms/f995daf47f1b0cc9742a90171c63ae1a/transformed/core-1.15.0/res/values-zu/values-zu.xml",

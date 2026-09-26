@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.carphone.app-mergeDebugResources-47:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "com.carphone.app-mergeDebugResources-49:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
                     "source": "/Users/m1ns2o128/.gradle/caches/8.13/transforms/7d0e64c10c2f9b8c5ce094a2e96ba707/transformed/play-services-auth-21.2.0/res/values-watch-v20/values.xml",

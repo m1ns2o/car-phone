@@ -11,5 +11,6 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         ctx = this
+        com.carphone.app.push.FirebaseSetup.init()
     }
 }

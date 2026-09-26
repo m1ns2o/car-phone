@@ -59,7 +59,8 @@ struct FriendsView: View {
       .navigationDestination(item: $callTarget) { t in
         CallView(vm: CallViewModel(
           roomId: t.room, name: auth.me?.username ?? Store.shared.displayName,
-          inviteTo: t.peerId, inviteFrom: auth.me?.id, peerUserId: t.peerId))
+          inviteTo: t.peerId, inviteFrom: auth.me?.id, peerUserId: t.peerId,
+          peerName: t.peerName, myUserId: auth.me?.id))
       }
 
     }

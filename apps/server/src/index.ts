@@ -20,6 +20,8 @@ import { authRoutes } from './routes/auth.js';
 import { userRoutes } from './routes/users.js';
 import { friendRoutes } from './routes/friends.js';
 import { callRoutes } from './routes/calls.js';
+import { pushRoutes } from './routes/push.js';
+import { pushInvite } from './push/sender.js';
 
 const PORT = Number(process.env.SERVER_PORT ?? 3000);
 const VERSION = '0.2.0-friends';
@@ -38,6 +40,7 @@ await app.register(authRoutes);
 await app.register(userRoutes);
 await app.register(friendRoutes);
 await app.register(callRoutes);
+await app.register(pushRoutes);
 
 // WS signaling — 같은 roomId 2명에게 relay (음성은 P2P) + 로그인 유저는 CALL_INVITE 수신
 app.register(async (f) => {
@@ -86,10 +89,17 @@ app.register(async (f) => {
       }
       if (msg.t === 'PONG') return;
 
-      // 친구 호출 초대 — 수신자 온라인 소켓에 직접 전달
+      // 친구 호출 초대 — 온라인 소켓에 직접 전달, 오프라인이면 푸시
       if (msg.t === 'CALL_INVITE') {
-        for (const peer of socketsOf(msg.toUserId)) {
-          if (peer !== socket) peer.send(JSON.stringify(msg));
+        const peers = socketsOf(msg.toUserId).filter((peer) => peer !== socket);
+        for (const peer of peers) peer.send(JSON.stringify(msg));
+        if (peers.length === 0) {
+          void pushInvite({
+            toUserId: msg.toUserId,
+            roomId: msg.roomId,
+            from: msg.from,
+            fromUserId: msg.fromUserId,
+          });
         }
         return;
       }

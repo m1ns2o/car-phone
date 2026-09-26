@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.carphone.app-mergeDebugResources-47:/values-th/values-th.xml",
+            "outputFile": "com.carphone.app-mergeDebugResources-49:/values-th/values-th.xml",
             "map": [
                 {
                     "source": "/Users/m1ns2o128/.gradle/caches/8.13/transforms/5731e0aefb9554adb3275cd0e6082c3a/transformed/play-services-basement-18.3.0/res/values-th/values.xml",
